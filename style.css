@@ -199,6 +199,12 @@ h3 {
   font-size: 0.875rem;
 }
 
+.luoghi-swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .skip-link {
   position: absolute;
   top: -6rem;
