@@ -48,26 +48,27 @@
   },
 
   {
-  "id": 5,
-  "titolo": "Mappe da abitare",
-  "data": "2026-06-13",
-  "orario": "14:00",
-  "categoria": "Laboratorio",
-  "descrizione": "Disegniamo una mappa fatta di percorsi, punti di incontro e luoghi da riscoprire, partendo dall'esperienza di chi li attraversa.",
-  "immagine": "assets/mappe-abitare.jpg",
-  "immagine_alt": "Mappa beige che rappresenta dislivelli.",
-  "sede_id": 2
-},
+    "id": 5,
+    "titolo": "Mappe da abitare",
+    "data": "2026-06-13",
+    "orario": "14:00",
+    "categoria": "Laboratorio",
+    "descrizione": "Disegniamo una mappa fatta di percorsi, punti di incontro e luoghi da riscoprire, partendo dall'esperienza di chi li attraversa.",
+    "immagine": "assets/mappe-abitare.jpg",
+    "immagine_alt": "Mappa beige che rappresenta dislivelli.",
+    "sede_id": 2
+  },
+  
 {
-  "id": 6,
-  "titolo": "Progettare insieme",
-  "data": "2026-06-13",
-  "orario": "17:00",
-  "categoria": "Mostra",
-  "descrizione": "Una selezione di progetti collettivi mostra come idee diverse possano diventare un risultato condiviso.",
-  "immagine": "assets/progettare-insieme.jpg",
-  "immagine_alt": "Mani che organizzano oggetti diversi disposti su un tavolo.",
-  "sede_id": 3
-}
+    "id": 6,
+    "titolo": "Progettare insieme",
+    "data": "2026-06-13",
+    "orario": "17:00",
+    "categoria": "Mostra",
+    "descrizione": "Una selezione di progetti collettivi mostra come idee diverse possano diventare un risultato condiviso.",
+    "immagine": "assets/progettare-insieme.jpg",
+    "immagine_alt": "Mani che organizzano oggetti diversi disposti su un tavolo.",
+    "sede_id": 3
+  }
 
 ]

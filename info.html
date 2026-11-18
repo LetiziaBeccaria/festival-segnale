@@ -106,6 +106,25 @@
   </ul>
 </section>
 
+<section class="content-section" aria-labelledby="titolo-meteo">
+  <h2 id="titolo-meteo">Meteo a Torino adesso</h2>
+
+  <div id="meteo-torino" aria-live="polite">
+    <p class="reading-text">Caricamento del meteo…</p>
+  </div>
+
+  <p class="reading-text">
+    Sono dati meteo attuali, non una previsione per le date del festival.
+  </p>
+
+  <p class="reading-text">
+    Dati meteo:
+    <a href="https://open-meteo.com/">Open-Meteo</a>,
+    licenza
+    <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+  </p>
+</section>
+
   </main>
 
   <footer class="site-footer">
@@ -127,6 +146,48 @@
       prevEl: ".swiper-button-prev"
     }
   });
+</script>
+
+<script>
+  const contenitoreMeteo = document.getElementById("meteo-torino");
+
+  async function caricaMeteo() {
+    try {
+      const url = "https://api.open-meteo.com/v1/forecast?latitude=45.0703&longitude=7.6869&current=temperature_2m,wind_speed_10m&timezone=Europe%2FRome";
+      const risposta = await fetch(url);
+
+      if (!risposta.ok) {
+        throw new Error("La richiesta meteo non è riuscita.");
+      }
+
+      const dati = await risposta.json();
+
+      if (!dati.current || !dati.current_units) {
+        throw new Error("La risposta meteo non contiene i dati attesi.");
+      }
+
+      const temperatura = document.createElement("p");
+      temperatura.textContent =
+        `Temperatura: ${dati.current.temperature_2m} ${dati.current_units.temperature_2m}`;
+
+      const vento = document.createElement("p");
+      vento.textContent =
+        `Vento: ${dati.current.wind_speed_10m} ${dati.current_units.wind_speed_10m}`;
+
+      const ora = document.createElement("p");
+      ora.textContent = `Ora del dato: ${dati.current.time.replace("T", " ")} (ora di Torino)`;
+
+      contenitoreMeteo.replaceChildren(temperatura, vento, ora);
+    } catch (errore) {
+      const messaggio = document.createElement("p");
+      messaggio.className = "reading-text";
+      messaggio.textContent = "Il meteo non è al momento disponibile.";
+      contenitoreMeteo.replaceChildren(messaggio);
+      console.error(errore);
+    }
+  }
+
+  caricaMeteo();
 </script>
 </body>
 </html>
