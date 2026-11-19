@@ -12,7 +12,7 @@
 erDiagram
     SEDE ||--o{ EVENTO : ospita
 
-    SEDE {
+    SEDE {s
         INT id PK
         STRING nome
         STRING indirizzo
